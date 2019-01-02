@@ -5,15 +5,13 @@ import itertools
 
 class WordGod:
 	"""
-	This class accesses a file of words, allowing interrogation.
-	
-	
+	This class accesses a file of words to create a dictionary of anagrams.	
 	"""
 		
-	def __init__(self):
+	def __init__(self, word_filename):
 		
 		# Create list of lowercase words as reference.
-		word_list = list(word.strip().lower() for word in open("./words.txt", 'r'))
+		word_list = list(word.strip().lower() for word in open(word_filename, 'r'))
 		
 		# Create dictionary of signatures.
 		words_bysig = collections.defaultdict(list)
@@ -81,17 +79,18 @@ class WordGod:
 			return []
 			
 # Obtain list of longest words in one step.
-def longest_words(rack, minimum_length, wild_character):	
+def longest_words(rack, minimum_length, wild_character, word_filename):	
 	"""Determine the longest words which can be retrieved from a given rack of letters.
 	Args:
 		rack (str): The list of letters from which words are to be constructed. This may include any number of wild characters.
 		minimum_length (int): The minimum length of words to be constructed.
 		wild_character (str): A non-alphabetic character to be considered a wild character.
+		word_filename (str): Name of the file containing a list of all possible words.
 
 	Returns:
 		list: A list of words (sorted alphabetically) which have been found in the given rack. If no words have been found, then the list is empty.
 	"""
 
 	# Create word_god instance.
-	myWordGod = WordGod()
+	myWordGod = WordGod(word_filename)
 	return myWordGod.longest_words(rack=rack, minimum_length=minimum_length, wild_character=wild_character)

@@ -8,7 +8,7 @@ MIN_LENGTH = 3
 if __name__ == "__main__":
 	
 	# Create word_god instance.
-	wordGod = WordGod()
+	wordGod = WordGod("words.txt")
 	
 	# Keep asking for new input, only stopping when quit requested.
 	while True:

@@ -2,7 +2,6 @@
 import requests
 import os
 from bs4 import BeautifulSoup
-from functools import partial
 
 # Constants.
 _ABC_NEWS_JUSTIN_PAGE= "http://www.abc.net.au/news/justin"
