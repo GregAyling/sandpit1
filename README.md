@@ -1,4 +1,4 @@
-# word_god
+# word_godss
 
 This library supplies functionality based on a file containing a list of words.
 
